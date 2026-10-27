@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // Urutan percobaan: langsung dari browser tanpa referrer, lalu lewat proxy sendiri.
-export default function Thumb({ src }) {
+export default function Thumb({ src, className }) {
   const [step, setStep] = useState(0);
   const ref = useRef(null);
   const urls = [src, `/api/img?u=${encodeURIComponent(src)}`];
@@ -19,6 +19,7 @@ export default function Thumb({ src }) {
     <img
       ref={ref}
       key={step}
+      className={className}
       loading="lazy"
       referrerPolicy="no-referrer"
       src={urls[step]}
