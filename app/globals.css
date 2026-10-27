@@ -140,3 +140,15 @@ a:hover { color: var(--acc); }
 .rimg { display: block; }
 .rpic { width: 100%; height: auto; display: block; }
 .hide { display: none; }
+
+/* ---------- Reader scroll (mode webtoon) ---------- */
+.scroll { max-width: 900px; margin: 0 auto; padding-bottom: 40px; }
+.scroll .rnav.end { justify-content: center; padding: 28px 12px; }
+.spage { width: 100%; background: var(--panel); scroll-margin-top: 52px; }
+.spic { width: 100%; height: 100%; display: block; object-fit: contain; }
+.prog {
+  position: fixed; right: 10px; bottom: 14px; z-index: 6;
+  background: rgba(18, 18, 18, .85); border: 1px solid var(--line);
+  padding: 4px 9px; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--txt); pointer-events: none;
+}
