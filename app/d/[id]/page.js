@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../Header";
 import Thumb from "../../Thumb";
+import DownloadAll from "../../DownloadAll";
 import { getGallery, tagQuery } from "../../../lib/scrape";
 
 export const dynamic = "force-dynamic";
@@ -66,6 +67,12 @@ export default async function Detail({ params }) {
             <Link href={`/d/${id}/read`} className="readbtn">
               Baca (scroll ke bawah)
             </Link>
+
+            <DownloadAll
+              id={id}
+              title={g.title}
+              pages={g.pages.filter((p) => p.img).map((p) => ({ n: p.n, img: p.img }))}
+            />
           </div>
         </div>
 
