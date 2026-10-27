@@ -63,8 +63,8 @@ export default async function Detail({ params }) {
               </div>
             ))}
 
-            <Link href={`/d/${id}/1`} className="readbtn">
-              Baca dari halaman 1
+            <Link href={`/d/${id}/read`} className="readbtn">
+              Baca (scroll ke bawah)
             </Link>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default async function Detail({ params }) {
         <h2 className="sec">Halaman</h2>
         <div className="grid thumbs">
           {g.pages.map((p) => (
-            <Link key={p.n} className="card" href={`/d/${id}/${p.n}`}>
+            <Link key={p.n} className="card" href={`/d/${id}/read#p${p.n}`}>
               <div className="thumb">{p.thumb && <Thumb src={p.thumb} />}</div>
               <div className="meta">{p.n}</div>
             </Link>
