@@ -93,3 +93,8 @@ a:hover { color: var(--acc); }
 }
 .gate-box a { color: var(--mut); border-color: var(--line); }
 .gate-box button:hover { color: var(--acc); border-color: var(--acc); }
+
+.nothumb {
+  height: 100%; display: flex; align-items: center; justify-content: center;
+  padding: 8px; text-align: center; font-size: 12px; color: var(--mut);
+}
