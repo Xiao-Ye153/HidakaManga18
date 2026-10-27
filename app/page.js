@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getListing } from "../lib/scrape";
+import Header from "./Header";
 import Thumb from "./Thumb";
 
 export const dynamic = "force-dynamic";
@@ -32,17 +33,7 @@ export default async function Home({ searchParams }) {
 
   return (
     <>
-      <header className="bar">
-        <div className="bar-in">
-          <Link href="/" className="brand">
-            Hidaka<b>Manga</b>18
-          </Link>
-          <form action="/" className="search">
-            <input name="q" defaultValue={q} placeholder="Cari judul atau tag" autoComplete="off" />
-            <button type="submit">Cari</button>
-          </form>
-        </div>
-      </header>
+      <Header q={q} />
 
       <main className="wrap">
         {error && <p className="note">Gagal ambil data: {error}</p>}
@@ -57,13 +48,7 @@ export default async function Home({ searchParams }) {
             </h2>
             <div className="grid">
               {sec.items.map((it) => (
-                <a
-                  key={sec.name + it.id}
-                  className="card"
-                  href={it.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link key={sec.name + it.id} className="card" href={`/d/${it.id}`}>
                   <div className="thumb">
                     {it.thumb && <Thumb src={it.thumb} />}
                   </div>
@@ -73,7 +58,7 @@ export default async function Home({ searchParams }) {
                       .filter(Boolean)
                       .join(" / ")}
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </section>
