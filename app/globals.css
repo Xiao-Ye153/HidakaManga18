@@ -157,3 +157,13 @@ a:hover { color: var(--acc); }
 .sorts { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; font-size: 13px; color: var(--mut); }
 .sorts a { padding-bottom: 2px; border-bottom: 1px solid transparent; }
 .sorts a.on { color: var(--txt); border-bottom-color: var(--acc); }
+
+/* ---------- Download semua ---------- */
+.dl { margin-top: 14px; }
+.dlbtn {
+  background: none; border: 1px solid var(--line); color: var(--txt);
+  font: inherit; padding: 9px 14px; cursor: pointer;
+}
+.dlbtn:hover:not(:disabled) { border-color: var(--acc); color: var(--acc); }
+.dlbtn:disabled { color: var(--mut); cursor: default; }
+.dlnote { margin-top: 6px; font-size: 13px; color: var(--mut); }
