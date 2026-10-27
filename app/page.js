@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getListing } from "../lib/scrape";
+import Thumb from "./Thumb";
 
 export const dynamic = "force-dynamic";
 
@@ -64,13 +65,7 @@ export default async function Home({ searchParams }) {
                   rel="noopener noreferrer"
                 >
                   <div className="thumb">
-                    {it.thumb && (
-                      <img
-                        loading="lazy"
-                        src={`/api/img?u=${encodeURIComponent(it.thumb)}`}
-                        alt=""
-                      />
-                    )}
+                    {it.thumb && <Thumb src={it.thumb} />}
                   </div>
                   <div className="ttl">{it.title}</div>
                   <div className="meta">
