@@ -1,4 +1,4 @@
-import { BASE, UA } from "../../../lib/scrape";
+import { BASE, UA } from "../../../lib/";
 
 export const runtime = "nodejs";
 
