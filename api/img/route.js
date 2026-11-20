@@ -49,4 +49,4 @@ export async function GET(req) {
   }
   if (debug) return Response.json({ ok: false, log });
   return new Response("Gagal ambil gambar", { status: 502 });
-} trying (8.09)
+}
